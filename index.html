@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mahapurush Sairam's Chatbot</title>
+  <title>Mahapurush Sairam's Chatbot - No Login Required</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -20,114 +20,108 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 20px;
     }
 
     .chat-container {
-      width: 90%;
-      max-width: 1200px;
+      width: 100%;
+      max-width: 1400px;
       height: 90vh;
       background: white;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      border-radius: 30px;
+      box-shadow: 0 30px 100px rgba(0,0,0,0.4);
       display: flex;
       overflow: hidden;
+      border: 3px solid #ffd700;
     }
 
-    /* Login Panel */
-    .login-panel {
+    /* Left Panel - Info Section */
+    .info-panel {
       width: 350px;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      background: linear-gradient(145deg, #2d3748 0%, #1a202c 100%);
       padding: 40px 30px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      color: white;
+      border-right: 3px solid #ffd700;
     }
 
-    .logo {
+    .logo-section {
       text-align: center;
       margin-bottom: 40px;
     }
 
-    .logo h1 {
-      color: #4a5568;
-      font-size: 24px;
-      margin-top: 10px;
+    .logo-section i {
+      font-size: 80px;
+      color: #ffd700;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 10px gold);
     }
 
-    .google-btn {
-      width: 100%;
-      padding: 15px;
-      background: white;
-      border: 2px solid #4285f4;
-      border-radius: 50px;
-      color: #4285f4;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
+    .logo-section h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      background: linear-gradient(45deg, #ffd700, #ffa500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo-section p {
+      color: #cbd5e0;
+      font-size: 14px;
+    }
+
+    .features {
+      flex: 1;
+    }
+
+    .feature-item {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      transition: all 0.3s;
-      margin-top: 20px;
+      gap: 15px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(255, 215, 0, 0.3);
     }
 
-    .google-btn:hover {
-      background: #4285f4;
-      color: white;
-    }
-
-    .google-btn i {
-      font-size: 20px;
-    }
-
-    .user-info {
-      width: 100%;
+    .feature-item i {
+      font-size: 24px;
+      color: #ffd700;
+      width: 40px;
       text-align: center;
-      display: none;
     }
 
-    .user-avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin: 0 auto 15px;
-      overflow: hidden;
-      border: 3px solid #4299e1;
-    }
-
-    .user-avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .user-name {
-      font-size: 20px;
-      font-weight: bold;
-      color: #2d3748;
+    .feature-text h3 {
+      font-size: 16px;
       margin-bottom: 5px;
     }
 
-    .user-email {
-      color: #718096;
-      margin-bottom: 20px;
-      font-size: 14px;
+    .feature-text p {
+      font-size: 12px;
+      color: #a0aec0;
     }
 
-    .logout-btn {
-      padding: 10px 30px;
-      background: #f56565;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      font-size: 14px;
-      transition: all 0.3s;
+    .visitor-counter {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 215, 0, 0.1);
+      border-radius: 15px;
+      border: 2px dashed #ffd700;
+      margin-top: 20px;
     }
 
-    .logout-btn:hover {
-      background: #c53030;
+    .visitor-counter i {
+      color: #ffd700;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .visitor-counter .count {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffd700;
     }
 
     /* Chat Panel */
@@ -139,9 +133,9 @@
     }
 
     .chat-header {
-      padding: 20px;
+      padding: 20px 30px;
       background: white;
-      border-bottom: 2px solid #e2e8f0;
+      border-bottom: 3px solid #ffd700;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -149,39 +143,63 @@
 
     .chat-header h2 {
       color: #2d3748;
-      font-size: 20px;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chat-header h2 i {
+      color: #ffd700;
     }
 
     .chat-controls button {
-      padding: 8px 15px;
+      padding: 10px 15px;
       margin-left: 10px;
       border: none;
-      border-radius: 5px;
+      border-radius: 10px;
       cursor: pointer;
-      background: #e2e8f0;
+      background: #edf2f7;
       color: #4a5568;
       transition: all 0.3s;
+      font-size: 16px;
     }
 
     .chat-controls button:hover {
-      background: #cbd5e0;
+      background: #ffd700;
+      color: #1a202c;
+      transform: scale(1.05);
     }
 
     .chat-messages {
       flex: 1;
-      padding: 20px;
+      padding: 30px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
+      background: #f7fafc;
+    }
+
+    .chat-messages::-webkit-scrollbar {
+      width: 8px;
+    }
+    .chat-messages::-webkit-scrollbar-track {
+      background: #e2e8f0;
+    }
+    .chat-messages::-webkit-scrollbar-thumb {
+      background: #ffd700;
+      border-radius: 10px;
     }
 
     .message {
       max-width: 70%;
-      padding: 12px 18px;
-      border-radius: 15px;
+      padding: 15px 20px;
+      border-radius: 20px;
       position: relative;
       animation: fadeIn 0.3s;
+      font-size: 15px;
+      line-height: 1.5;
     }
 
     @keyframes fadeIn {
@@ -191,9 +209,10 @@
 
     .message.user {
       align-self: flex-end;
-      background: #4299e1;
+      background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
       color: white;
       border-bottom-right-radius: 5px;
+      box-shadow: 0 5px 15px rgba(66, 153, 225, 0.4);
     }
 
     .message.bot {
@@ -201,69 +220,71 @@
       background: white;
       color: #2d3748;
       border-bottom-left-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-left: 4px solid #ffd700;
+    }
+
+    .message.bot::before {
+      content: "🕉️";
+      position: absolute;
+      left: -30px;
+      top: 10px;
+      font-size: 20px;
     }
 
     .timestamp {
-      font-size: 10px;
-      margin-top: 5px;
+      font-size: 11px;
+      margin-top: 8px;
       opacity: 0.7;
+      text-align: right;
     }
 
     .chat-input-area {
-      padding: 20px;
+      padding: 20px 30px;
       background: white;
-      border-top: 2px solid #e2e8f0;
+      border-top: 3px solid #ffd700;
       display: flex;
-      gap: 10px;
+      gap: 15px;
     }
 
     .chat-input-area input {
       flex: 1;
-      padding: 15px;
+      padding: 15px 20px;
       border: 2px solid #e2e8f0;
-      border-radius: 10px;
+      border-radius: 15px;
       outline: none;
       font-size: 16px;
       transition: all 0.3s;
     }
 
     .chat-input-area input:focus {
-      border-color: #4299e1;
-    }
-
-    .chat-input-area input:disabled {
-      background: #edf2f7;
-      cursor: not-allowed;
+      border-color: #ffd700;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
     }
 
     .chat-input-area button {
-      width: 60px;
-      height: 60px;
+      width: 70px;
+      height: 70px;
       border: none;
-      border-radius: 10px;
-      background: #4299e1;
-      color: white;
-      font-size: 20px;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+      color: #1a202c;
+      font-size: 24px;
       cursor: pointer;
       transition: all 0.3s;
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
     }
 
-    .chat-input-area button:hover:not(:disabled) {
-      background: #2b6cb0;
-      transform: scale(1.05);
-    }
-
-    .chat-input-area button:disabled {
-      background: #cbd5e0;
-      cursor: not-allowed;
+    .chat-input-area button:hover {
+      transform: scale(1.05) rotate(5deg);
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
     }
 
     /* History Panel */
     .history-panel {
       width: 300px;
       background: white;
-      border-left: 2px solid #e2e8f0;
+      border-left: 3px solid #ffd700;
       padding: 20px;
       overflow-y: auto;
     }
@@ -272,34 +293,42 @@
       color: #2d3748;
       margin-bottom: 20px;
       padding-bottom: 10px;
-      border-bottom: 2px solid #e2e8f0;
+      border-bottom: 3px solid #ffd700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .history-panel h3 i {
+      color: #ffd700;
     }
 
     .history-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
     .history-item {
-      padding: 10px;
+      padding: 12px;
       background: #f7fafc;
-      border-radius: 8px;
+      border-radius: 12px;
       cursor: pointer;
       transition: all 0.3s;
-      border-left: 3px solid #4299e1;
+      border-left: 4px solid #ffd700;
     }
 
     .history-item:hover {
       background: #edf2f7;
       transform: translateX(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
     .history-question {
       font-weight: bold;
       color: #2d3748;
       margin-bottom: 5px;
-      font-size: 14px;
+      font-size: 13px;
     }
 
     .history-answer {
@@ -316,16 +345,16 @@
     .empty-history {
       color: #a0aec0;
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
       font-style: italic;
     }
 
     .spinner {
       display: inline-block;
-      width: 20px;
-      height: 20px;
-      border: 3px solid #e2e8f0;
-      border-top-color: #4299e1;
+      width: 25px;
+      height: 25px;
+      border: 3px solid #fed7e2;
+      border-top-color: #ffd700;
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
@@ -333,37 +362,73 @@
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
+
+    .welcome-message {
+      background: linear-gradient(135deg, #ffd700 0%, #ffa500 100%);
+      color: #1a202c;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.5);
+    }
+
+    @media (max-width: 1024px) {
+      .info-panel, .history-panel {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="chat-container">
-    <!-- Login Panel -->
-    <div class="login-panel">
-      <div class="logo">
-        <i class="fas fa-robot" style="font-size: 50px; color: #4299e1;"></i>
+    <!-- Left Info Panel -->
+    <div class="info-panel">
+      <div class="logo-section">
+        <i class="fas fa-robot"></i>
         <h1>Mahapurush Sairam</h1>
+        <p>Divine AI Assistant</p>
       </div>
 
-      <div id="loginContent">
-        <button class="google-btn" id="googleLoginBtn">
-          <i class="fab fa-google"></i> Login with Google
-        </button>
-      </div>
-
-      <div class="user-info" id="userInfo">
-        <div class="user-avatar" id="userAvatar">
-          <img src="" alt="Profile" id="avatarImg">
+      <div class="features">
+        <div class="feature-item">
+          <i class="fas fa-comment-dots"></i>
+          <div class="feature-text">
+            <h3>No Login Required</h3>
+            <p>Start chatting instantly</p>
+          </div>
         </div>
-        <div class="user-name" id="userName"></div>
-        <div class="user-email" id="userEmail"></div>
-        <button class="logout-btn" id="logoutBtn">Logout</button>
+        <div class="feature-item">
+          <i class="fas fa-brain"></i>
+          <div class="feature-text">
+            <h3>Sairam's Model</h3>
+            <p>Created by Mahapurush Sairam</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-history"></i>
+          <div class="feature-text">
+            <h3>Chat History</h3>
+            <p>Auto-saved in browser</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="visitor-counter">
+        <i class="fas fa-users"></i>
+        <div class="count" id="visitorCount">1,234</div>
+        <p>Active Users Today</p>
       </div>
     </div>
 
     <!-- Chat Panel -->
     <div class="chat-panel">
       <div class="chat-header">
-        <h2><i class="fas fa-comments"></i> Neon Chat</h2>
+        <h2>
+          <i class="fas fa-comments"></i> 
+          Sairam's Divine Chat
+        </h2>
         <div class="chat-controls">
           <button id="minimizeBtn"><i class="fas fa-minus"></i></button>
           <button id="clearChatBtn"><i class="fas fa-trash"></i></button>
@@ -371,124 +436,113 @@
       </div>
 
       <div class="chat-messages" id="chatMessages">
-        <div class="message bot">
-          🙏 Welcome! Please login with Google to start chatting.
-          <div class="timestamp">Just now</div>
+        <div class="welcome-message">
+          <i class="fas fa-hands-praying" style="font-size: 30px; margin-bottom: 10px;"></i>
+          <p>🙏 Welcome to Mahapurush Sairam's Chatbot!</p>
+          <p style="font-size: 14px; margin-top: 10px;">Ask me anything - I'm here to help</p>
         </div>
       </div>
 
       <div class="chat-input-area">
-        <input type="text" id="userInput" placeholder="Type your message..." disabled>
-        <button id="sendButton" disabled><i class="fas fa-paper-plane"></i></button>
+        <input type="text" id="userInput" placeholder="Type your message here..." autocomplete="off">
+        <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
       </div>
     </div>
 
     <!-- History Panel -->
     <div class="history-panel">
-      <h3><i class="fas fa-history"></i> Chat History</h3>
+      <h3><i class="fas fa-history"></i> Recent Chats</h3>
       <div class="history-list" id="historyList">
-        <div class="empty-history">Login to see your chat history</div>
+        <div class="empty-history">
+          <i class="fas fa-comment-slash" style="font-size: 30px; margin-bottom: 10px; color: #ffd700;"></i>
+          <p>Your messages will appear here</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Firebase SDK -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-    import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyDCKcQOeZmN_OxwO_mUWDZnzkoKhLCdeFs",
-      authDomain: "mahapurush-sairam.firebaseapp.com",
-      projectId: "mahapurush-sairam",
-      storageBucket: "mahapurush-sairam.firebasestorage.app",
-      messagingSenderId: "151652517717",
-      appId: "1:151652517717:web:0d00e5ad2f3f250577d1dc"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
-
-    window.auth = auth;
-    window.provider = provider;
-    window.signInWithPopup = signInWithPopup;
-    window.signOut = signOut;
-    window.onAuthStateChanged = onAuthStateChanged;
-
-    console.log("Firebase Ready!");
-  </script>
-
   <script>
     // DOM Elements
-    const googleLoginBtn = document.getElementById('googleLoginBtn');
-    const userInfo = document.getElementById('userInfo');
-    const loginContent = document.getElementById('loginContent');
-    const avatarImg = document.getElementById('avatarImg');
-    const userName = document.getElementById('userName');
-    const userEmail = document.getElementById('userEmail');
-    const logoutBtn = document.getElementById('logoutBtn');
+    const chatMessages = document.getElementById('chatMessages');
     const userInput = document.getElementById('userInput');
     const sendButton = document.getElementById('sendButton');
-    const chatMessages = document.getElementById('chatMessages');
-    const historyList = document.getElementById('historyList');
     const minimizeBtn = document.getElementById('minimizeBtn');
     const clearChatBtn = document.getElementById('clearChatBtn');
+    const historyList = document.getElementById('historyList');
+    const visitorCount = document.getElementById('visitorCount');
 
     // State
-    let currentUser = null;
     let chatHistory = [];
     let isMinimized = false;
 
-    // Check auth state
-    window.onAuthStateChanged(window.auth, (user) => {
-      if (user) {
-        // User is logged in
-        currentUser = user;
-        loginContent.style.display = 'none';
-        userInfo.style.display = 'block';
-        avatarImg.src = user.photoURL || 'https://via.placeholder.com/80';
-        userName.textContent = user.displayName || 'User';
-        userEmail.textContent = user.email || '';
-        
-        userInput.disabled = false;
-        sendButton.disabled = false;
-        
-        addMessage('bot', `🙏 Namaste ${user.displayName?.split(' ')[0] || 'User'}! How can I help you?`);
-        loadHistory();
-      } else {
-        // User is logged out
-        currentUser = null;
-        loginContent.style.display = 'block';
-        userInfo.style.display = 'none';
-        
-        userInput.disabled = true;
-        sendButton.disabled = true;
-        
-        chatMessages.innerHTML = '<div class="message bot">🙏 Welcome! Please login with Google to start chatting.<div class="timestamp">Just now</div></div>';
-        historyList.innerHTML = '<div class="empty-history">Login to see your chat history</div>';
+    // Initialize visitor counter (random for demo)
+    visitorCount.textContent = Math.floor(Math.random() * 1000 + 500).toLocaleString();
+
+    // Load chat history from localStorage
+    function loadHistory() {
+      const saved = localStorage.getItem('sairam_chat_history');
+      if (saved) {
+        chatHistory = JSON.parse(saved);
+        updateHistoryDisplay();
       }
-    });
+    }
 
-    // Google Login
-    googleLoginBtn.addEventListener('click', async () => {
-      try {
-        googleLoginBtn.innerHTML = '<span class="spinner"></span> Loading...';
-        googleLoginBtn.disabled = true;
-        await window.signInWithPopup(window.auth, window.provider);
-      } catch (error) {
-        alert('Login failed: ' + error.message);
-        googleLoginBtn.innerHTML = '<i class="fab fa-google"></i> Login with Google';
-        googleLoginBtn.disabled = false;
+    // Save to localStorage
+    function saveToHistory(sender, text) {
+      const historyItem = {
+        sender,
+        text,
+        time: new Date().toISOString()
+      };
+      
+      chatHistory.push(historyItem);
+      
+      // Keep only last 50 messages
+      if (chatHistory.length > 50) {
+        chatHistory = chatHistory.slice(-50);
       }
-    });
+      
+      localStorage.setItem('sairam_chat_history', JSON.stringify(chatHistory));
+      updateHistoryDisplay();
+    }
 
-    // Logout
-    logoutBtn.addEventListener('click', async () => {
-      await window.signOut(window.auth);
-    });
+    // Update history display
+    function updateHistoryDisplay() {
+      historyList.innerHTML = '';
+      
+      if (chatHistory.length === 0) {
+        historyList.innerHTML = `
+          <div class="empty-history">
+            <i class="fas fa-comment-slash" style="font-size: 30px; margin-bottom: 10px; color: #ffd700;"></i>
+            <p>Your messages will appear here</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Show last 10 messages in reverse
+      const recent = [...chatHistory].reverse().slice(0, 10);
+      
+      recent.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'history-item';
+        div.innerHTML = `
+          <div class="history-question">
+            <i class="fas ${item.sender === 'user' ? 'fa-user' : 'fa-robot'}" style="color: #ffd700; margin-right: 5px;"></i>
+            ${item.sender === 'user' ? 'You' : 'Sairam'}
+          </div>
+          <div class="history-answer">${item.text.substring(0, 40)}${item.text.length > 40 ? '...' : ''}</div>
+          <div class="history-time">${new Date(item.time).toLocaleTimeString()}</div>
+        `;
+        div.onclick = () => {
+          userInput.value = item.text;
+          userInput.focus();
+        };
+        historyList.appendChild(div);
+      });
+    }
 
-    // Add message
+    // Add message to chat
     function addMessage(sender, text) {
       const messageDiv = document.createElement('div');
       messageDiv.className = `message ${sender}`;
@@ -504,108 +558,131 @@
       chatMessages.appendChild(messageDiv);
       chatMessages.scrollTop = chatMessages.scrollHeight;
       
-      if (currentUser) {
-        saveToHistory(sender, text);
-      }
+      saveToHistory(sender, text);
     }
 
-    // Save to history
-    function saveToHistory(sender, text) {
-      const historyItem = {
-        sender,
-        text,
-        time: new Date().toISOString()
-      };
-      
-      chatHistory.push(historyItem);
-      
-      if (currentUser) {
-        localStorage.setItem(`chat_${currentUser.uid}`, JSON.stringify(chatHistory));
-      }
-      
-      updateHistory();
+    // Show typing indicator
+    function showTyping() {
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'message bot';
+      typingDiv.id = 'typing';
+      typingDiv.innerHTML = `
+        <span class="spinner"></span> Thinking...
+        <div class="timestamp">Just now</div>
+      `;
+      chatMessages.appendChild(typingDiv);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    // Load history
-    function loadHistory() {
-      if (currentUser) {
-        const saved = localStorage.getItem(`chat_${currentUser.uid}`);
-        if (saved) {
-          chatHistory = JSON.parse(saved);
-          updateHistory();
-        }
-      }
+    // Remove typing indicator
+    function removeTyping() {
+      document.getElementById('typing')?.remove();
     }
 
-    // Update history display
-    function updateHistory() {
-      historyList.innerHTML = '';
+    // Get bot response
+    function getBotResponse(userMessage) {
+      const text = userMessage.toLowerCase().trim();
       
-      if (chatHistory.length === 0) {
-        historyList.innerHTML = '<div class="empty-history">No chat history yet</div>';
-        return;
+      // Check if asking about model
+      if (text.includes('model') || text.includes('who made you') || text.includes('who created you')) {
+        return "🙏 Sairam's Model - Created by Mahapurush Sairam";
       }
       
-      const recent = [...chatHistory].reverse().slice(0, 10);
+      // Greetings
+      if (text.match(/^(hi|hello|hey|namaste|hola|bonjour|namaskar)/)) {
+        return "🙏 Namaste! How can I assist you today?";
+      }
       
-      recent.forEach(item => {
-        const div = document.createElement('div');
-        div.className = 'history-item';
-        div.innerHTML = `
-          <div class="history-question">${item.sender === 'user' ? '👤 You' : '🤖 Sairam'}</div>
-          <div class="history-answer">${item.text.substring(0, 50)}${item.text.length > 50 ? '...' : ''}</div>
-          <div class="history-time">${new Date(item.time).toLocaleString()}</div>
-        `;
-        div.onclick = () => addMessage('bot', `📝 ${item.text}`);
-        historyList.appendChild(div);
-      });
+      // How are you
+      if (text.includes('how are you')) {
+        return "🙏 I'm always here to help! What would you like to know?";
+      }
+      
+      // Thanks
+      if (text.includes('thank')) {
+        return "🙏 You're most welcome!";
+      }
+      
+      // Goodbye
+      if (text.includes('bye') || text.includes('goodbye') || text.includes('tata')) {
+        return "🙏 Goodbye! May you have a blessed day!";
+      }
+      
+      // Help
+      if (text.includes('help') || text.includes('support')) {
+        return "🙏 I can help with: general questions, guidance, or just chat. What do you need?";
+      }
+      
+      // Name
+      if (text.includes('your name')) {
+        return "🙏 I'm Sairam's Divine Assistant, created by Mahapurush Sairam";
+      }
+      
+      // Time
+      if (text.includes('time')) {
+        return `🙏 The current time is ${new Date().toLocaleTimeString()}`;
+      }
+      
+      // Date
+      if (text.includes('date') || text.includes('today')) {
+        return `🙏 Today is ${new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`;
+      }
+      
+      // Weather (demo)
+      if (text.includes('weather')) {
+        return "🙏 The weather is always pleasant in the spiritual realm! But for accurate weather, please check your local forecast.";
+      }
+      
+      // Age
+      if (text.includes('how old')) {
+        return "🙏 I am timeless - created to serve and assist always!";
+      }
+      
+      // Default response with some personality
+      const responses = [
+        "🙏 Interesting! Tell me more.",
+        "🙏 I understand. Please continue.",
+        "🙏 That's a good point. What else would you like to discuss?",
+        "🙏 I'm here to listen and help.",
+        "🙏 Thank you for sharing that with me.",
+        "🙏 How wonderful! What else is on your mind?",
+        "🙏 I appreciate your message. How can I assist further?"
+      ];
+      
+      return responses[Math.floor(Math.random() * responses.length)];
     }
 
-    // Send message
-    async function sendMessage() {
+    // Handle send message
+    function handleSendMessage() {
       const text = userInput.value.trim();
       if (!text) return;
       
+      // Add user message
       addMessage('user', text);
       userInput.value = '';
       
       // Show typing
-      const typingDiv = document.createElement('div');
-      typingDiv.className = 'message bot';
-      typingDiv.id = 'typing';
-      typingDiv.innerHTML = '<span class="spinner"></span> Thinking...';
-      chatMessages.appendChild(typingDiv);
+      showTyping();
       
-      // Get bot reply
-      let reply = "I'm here to help!";
-      
-      // Check for model question
-      if (text.toLowerCase().includes('model') || text.toLowerCase().includes('who made you')) {
-        reply = "🙏 Sairam's Model - Created by Mahapurush Sairam";
-      } else {
-        // Simple responses
-        if (text.toLowerCase().includes('hello') || text.toLowerCase().includes('hi')) {
-          reply = "🙏 Namaste! How can I help you today?";
-        } else if (text.toLowerCase().includes('thank')) {
-          reply = "🙏 You're welcome!";
-        } else if (text.toLowerCase().includes('bye')) {
-          reply = "🙏 Goodbye! Have a blessed day!";
-        }
-      }
-      
-      // Remove typing and add reply
-      document.getElementById('typing')?.remove();
+      // Get response
       setTimeout(() => {
-        addMessage('bot', reply);
-      }, 500);
+        removeTyping();
+        const response = getBotResponse(text);
+        addMessage('bot', response);
+      }, 1000 + Math.random() * 500); // Random delay between 1-1.5 seconds
     }
 
     // Event listeners
-    sendButton.addEventListener('click', sendMessage);
+    sendButton.addEventListener('click', handleSendMessage);
+    
     userInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') sendMessage();
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        handleSendMessage();
+      }
     });
 
+    // Minimize chat
     minimizeBtn.addEventListener('click', () => {
       const messages = document.querySelector('.chat-messages');
       const input = document.querySelector('.chat-input-area');
@@ -623,10 +700,30 @@
       isMinimized = !isMinimized;
     });
 
+    // Clear chat
     clearChatBtn.addEventListener('click', () => {
       if (confirm('Clear all messages?')) {
-        chatMessages.innerHTML = '<div class="message bot">Chat cleared. Start a new conversation!<div class="timestamp">Just now</div></div>';
+        chatMessages.innerHTML = `
+          <div class="welcome-message">
+            <i class="fas fa-hands-praying" style="font-size: 30px; margin-bottom: 10px;"></i>
+            <p>🙏 Welcome to Mahapurush Sairam's Chatbot!</p>
+            <p style="font-size: 14px; margin-top: 10px;">Ask me anything - I'm here to help</p>
+          </div>
+        `;
+        // Don't clear history on chat clear
       }
+    });
+
+    // Initialize
+    loadHistory();
+    
+    // Focus input
+    userInput.focus();
+
+    // Auto-resize textarea (optional)
+    userInput.addEventListener('input', function() {
+      this.style.height = 'auto';
+      this.style.height = (this.scrollHeight) + 'px';
     });
   </script>
 </body>
